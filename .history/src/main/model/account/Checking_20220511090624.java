@@ -37,6 +37,7 @@ public class Checking extends Account {
          * 2. provide logic for deposit
          * 
          */
+        // TODO
     }
 
     @Override
@@ -50,7 +51,7 @@ public class Checking extends Account {
          * 
          */
         if (super.getBalance() - amount < 0) {
-            super.setBalance(super.round(super.getBalance() - amount - OVERDRAFT_FEE));
+            super.setBalance(super.getBalance() - amount - OVERDRAFT_FEE);
             return true;
         }
         super.setBalance(super.round(super.getBalance() - amount));

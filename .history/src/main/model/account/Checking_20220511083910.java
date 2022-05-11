@@ -1,13 +1,10 @@
-package main.model.account;
+package src.main.main.model.account;
 // child of Account 
 
 // or inherits from Account class
 // or extends the Account class 
 
 public class Checking extends Account {
-    // create an overdraft fee AS A CONSTANT
-    private static final double OVERDRAFT_FEE = 5.50;
-
     // extends need to sync w/ parent constructor
     // parameters updated fields, checking object inherits
     public Checking(String id, String name, double balance) {
@@ -37,6 +34,7 @@ public class Checking extends Account {
          * 2. provide logic for deposit
          * 
          */
+        // TODO
     }
 
     @Override
@@ -49,10 +47,6 @@ public class Checking extends Account {
          * 2. provide logic for withdraw
          * 
          */
-        if (super.getBalance() - amount < 0) {
-            super.setBalance(super.round(super.getBalance() - amount - OVERDRAFT_FEE));
-            return true;
-        }
         super.setBalance(super.round(super.getBalance() - amount));
         return true;
     }
