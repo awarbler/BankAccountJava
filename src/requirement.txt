@@ -1,0 +1,21 @@
+checking ACCOUNT
+
+A checking account contains an id, name, and balance.
+A checking account allows users to deposit or withdraw an amount of money.
+The checking account charges an overdraft fee of $5.50 if the amount being withdrawn exceeds the account balance.
+The overdraft limit is $200.00 dollars.
+A checking account is taxable. Income that exceeds $3,000 is taxed 15%.
+
+
+ SAVINGS ACCOUNT
+
+A savings account contains an id, name, and balance.
+A savings account allows users to deposit or withdraw an amount of money.
+Deposits are free, but the savings account charges a $5.00 fee for every withdrawal.
+
+LOAN ACCOUNT
+
+A loan account contains an id, name, and balance.
+A loan account allows users to deposit or withdraw an amount of money.
+A withdrawal can't made if the debt exceeds $10,000.
+Every withdrawal is charged a fixed interest rate of 2%.
