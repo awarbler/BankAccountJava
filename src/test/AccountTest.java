@@ -1,5 +1,6 @@
-
 package test;
+
+import org.junit.Test;
 
 import main.model.account.Account;
 import main.model.account.Checking;
@@ -30,9 +31,16 @@ public class AccountTest {
     public void withdrawal() {
 
         accounts[0].withdraw(1440);
-
         assertEquals(84.51, accounts[0].getBalance());
+    }
 
+    private void assertEquals(double d, double balance) {
+    }
+
+    @Test
+    public void overDraft() {
+        accounts[0].withdraw(1534.43);
+        assertEquals(-15.42, accounts[0].getBalance());
     }
 
 }
