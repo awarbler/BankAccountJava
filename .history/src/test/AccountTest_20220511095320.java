@@ -1,7 +1,8 @@
 package test;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.Before;
+
 import org.junit.Test;
 
 import main.model.account.Account;
@@ -29,10 +30,12 @@ public class AccountTest {
     }
 
     @Test
+    // Unit Testing the behavior for withdrawing
     public void withdrawal() {
+
         accounts[0].withdraw(1440);
         assertEquals(84.51, accounts[0].getBalance());
- }
+    }
 
     @Test
     public void overDraft() {

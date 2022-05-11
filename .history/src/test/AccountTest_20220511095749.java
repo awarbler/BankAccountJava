@@ -29,10 +29,11 @@ public class AccountTest {
     }
 
     @Test
+    // Unit Testing the behavior for withdrawing
     public void withdrawal() {
-        accounts[0].withdraw(1440);
-        assertEquals(84.51, accounts[0].getBalance());
- }
+
+         assertEquals(84.51, accounts[0].getBalance());
+    }
 
     @Test
     public void overDraft() {
