@@ -1,4 +1,4 @@
-package main.model.account;
+package BankAccount.src.main.model.account;
 // child of Account 
 
 // or inherits from Account class

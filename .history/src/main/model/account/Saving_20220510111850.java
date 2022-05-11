@@ -1,13 +1,13 @@
-package main.model.account;
+package BankAccount.src.main.model.account;
 // child of Account 
 
 // or inherits from Account class
 // or extends the Account class 
 
-public class Loan extends Account {
+public class Saving extends Account {
     // extends need to sync w/ parent constructor
     // parameters updated fields, checking object inherits
-    public Loan(String id, String name, double balance) {
+    public Saving(String id, String name, double balance) {
         // use super constructor
         // calling constructor in the parent class
         // updates field in current object
@@ -17,7 +17,7 @@ public class Loan extends Account {
     // Create a copy constructor
     // Receive source object
     // use copy constructor from parent
-    public Loan(Account source) {
+    public Saving(Account source) {
         // use super constructor
         // calling constructor in the parent class
         // updates field in current object
@@ -31,7 +31,7 @@ public class Loan extends Account {
          * 
          * Inside :
          * 1. child class required to provide an override with logic
-         * 2. provide logic for deposit
+         * 2. provide logic for deposit and withdraw
          * 
          */
         // TODO

@@ -1,10 +1,9 @@
 
-package test;
-
-import main.model.account.Account;
-import main.model.account.Checking;
-import main.model.account.Loan;
-import main.model.account.Saving;
+import src.main.model.account.Loan;
+import src.main.model.account.Account;
+import src.main.model.account.Checking;
+import src.main.model.account.Saving;
+import src.test.Test;packagesrc.test;
 
 public class AccountTest {
     Account[] accounts;
@@ -17,6 +16,7 @@ public class AccountTest {
          * Instructions:
          * 1. before any test are run
          * 2. create a new account array in Account class
+         * 3.
          */
         accounts = new Account[] {
                 new Checking("f84c43f4", "Michael Scott", 1524.51),
