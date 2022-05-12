@@ -3,3 +3,5 @@
 .history
 .vscode
 lib
+.DS_Store
+
