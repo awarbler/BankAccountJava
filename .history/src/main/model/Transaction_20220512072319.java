@@ -2,9 +2,8 @@ package main.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Objects;
 
-public class Transaction implements Comparable<Transaction> {
+public class Transaction {
     public enum Type{WITHDRAW, DEPOSIT};
     private Type type;
 
@@ -13,8 +12,7 @@ public class Transaction implements Comparable<Transaction> {
     private double amount;
 
 
-    public Transaction(Type type, long timestamp, String id, double amount) throws IllegalAccessException{
-        // quality control id and amount
+    public Transaction(Type type, long timestamp, String id, double amount){
         if(id == null || id.isBlank() || amount < 0){
             throw new IllegalAccessException("INVALID PARAMS");
         }
@@ -50,10 +48,10 @@ public class Transaction implements Comparable<Transaction> {
         return this.id;
     }
 
-    public void setId(String id) throws IllegalAccessException{
-        if(id == null || id.isBlank() || amount < 0){
-            throw new IllegalAccessException("INVALID ID");
-        }
+    public void setId(String id){
+        // if(id == null || id.isBlank() || amount < 0){
+        //     throw new IllegalAccessException("INVALID ID");
+        // }
         this.id = id;
     }
 
@@ -71,32 +69,24 @@ public class Transaction implements Comparable<Transaction> {
         Date date = new Date(this.timestamp * 1000);
         return new SimpleDateFormat("dd-MM-yyyy").format(date);
     }
-
     @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Transaction)) {
+    public boolean equals(Object o){
+        if(o == this)
+        return true;
+        if(!(o instanceof Transaction)){
             return false;
         }
-        Transaction transaction = (Transaction) o;
-        return Objects.equals(type, transaction.type) && timestamp == transaction.timestamp && Objects.equals(id, transaction.id) && amount == transaction.amount;
+        Transaction transaction =(Transaction) o;
+        return Object.equals(type, transaction.type)&& timestamp == transaction.timestamp && Object.equals(id, transaction.id) && amount == transaction.amount; 
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(type, timestamp, id, amount);
-    }
- 
-
-    @Override
-    // helps to sort lowest to hight
     public int compareTo(Transaction o){
         return Double.compare(this.timestamp,o.timestamp);
     }
     @Override
     public String toString() {
-        return(type) + "      " + 
+        returnDate(type) + "      " + 
         "\t" + this.returnDate() + 
         "\t$" + this.getAmount() + "";
     }

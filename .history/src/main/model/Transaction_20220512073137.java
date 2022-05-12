@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-public class Transaction implements Comparable<Transaction> {
+public class Transaction {
     public enum Type{WITHDRAW, DEPOSIT};
     private Type type;
 
@@ -13,11 +13,10 @@ public class Transaction implements Comparable<Transaction> {
     private double amount;
 
 
-    public Transaction(Type type, long timestamp, String id, double amount) throws IllegalAccessException{
-        // quality control id and amount
-        if(id == null || id.isBlank() || amount < 0){
-            throw new IllegalAccessException("INVALID PARAMS");
-        }
+    public Transaction(Type type, long timestamp, String id, double amount){
+        // if(id == null || id.isBlank() || amount < 0){
+        //     throw new IllegalAccessException("INVALID PARAMS");
+        // }
         this.type = type;
         this.timestamp = timestamp;
         this.id = id;
@@ -50,10 +49,10 @@ public class Transaction implements Comparable<Transaction> {
         return this.id;
     }
 
-    public void setId(String id) throws IllegalAccessException{
-        if(id == null || id.isBlank() || amount < 0){
-            throw new IllegalAccessException("INVALID ID");
-        }
+    public void setId(String id){
+        // if(id == null || id.isBlank() || amount < 0){
+        //     throw new IllegalAccessException("INVALID ID");
+        // }
         this.id = id;
     }
 
@@ -89,17 +88,16 @@ public class Transaction implements Comparable<Transaction> {
     }
  
 
-    @Override
-    // helps to sort lowest to hight
-    public int compareTo(Transaction o){
-        return Double.compare(this.timestamp,o.timestamp);
-    }
-    @Override
-    public String toString() {
-        return(type) + "      " + 
-        "\t" + this.returnDate() + 
-        "\t$" + this.getAmount() + "";
-    }
+    // @Override
+    // public int compareTo(Transaction o){
+    //     return Double.compare(this.timestamp,o.timestamp);
+    // }
+    // @Override
+    // public String toString() {
+    //     returnDate(type) + "      " + 
+    //     "\t" + this.returnDate() + 
+    //     "\t$" + this.getAmount() + "";
+    // }
 
 
 }
