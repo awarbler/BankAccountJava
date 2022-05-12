@@ -9,9 +9,10 @@ The program is in Java that demonstrates the following: Variables, Expressions, 
 
 Java language is an object-oriented language used for embedded and application development.Java requires the use of a compiler and a Java Virtual Machine (JVM) which can both be obtained by installing the Java Development Kit (JDK). Compiled code (often with a .class or .jar extension) will run on any computer that has a JVM. Java contains a substantial library which includes many classes for data structures (Java Collection Framework), file management, and threading. In Java, every file contains a single class. A static main function is created in one of the classes and is used to provide a starting point for the program.
 
-<!--{Describe your purpose for writing this software.}
+<!--{Describe your purpose for writing this software.}-->
+I am expanding on a previous bank account program I wrote. The program is to accept new account numbers, withdraws, and credits for a bank using classes and data structure. 
 
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running and a walkthrough of the code.  Focus should be on sharing what you learned about the language syntax.}-->
+<!---{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running and a walkthrough of the code.  Focus should be on sharing what you learned about the language syntax.}-->
 
 [Software Demo Video](https://youtu.be/PYKrchJvK9Y)
 
