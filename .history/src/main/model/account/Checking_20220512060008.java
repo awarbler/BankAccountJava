@@ -2,18 +2,13 @@ package main.model.account;
 // child of Account 
 
 // or inherits from Account class
-// or extends the Account class
-// ADD IMPLEMENTS TO FUNCTION NAME must override all method 
+// or extends the Account class 
 
-public class Checking extends Account implements Taxable {
+public class Checking extends Account {
     // declare a private static final  an overdraft fee AS A CONSTANT
     private static final double OVERDRAFT_FEE = 5.50;
     // DECLARE A PRIVATE STATIC CONSTANT FOR OVERDRAFT LIMIT
     private static final double OVERDRAFT_LIMIT = 200.00;
-    // constant for taxable income and tax rate
-
-    private static final double TAXABLE_INCOME = 3000;
-    private static final double TAX_RATE = 0.15;
 
     // extends need to sync w/ parent constructor
     // parameters updated fields, checking object inherits
@@ -44,7 +39,6 @@ public class Checking extends Account implements Taxable {
          * 2. provide logic for deposit
          * 
          */
-        super.setBalance(super.round(super.getBalance() + amount));
     }
 
     @Override
@@ -62,18 +56,12 @@ public class Checking extends Account implements Taxable {
         }
         else if (super.getBalance() - amount < 0) {
             super.setBalance(super.round(super.getBalance() - amount - OVERDRAFT_FEE));
-            return true;
         } else{
             super.setBalance(super.round(super.getBalance() - amount));
         return true;
 
         }
         
-    }
-    @Override
-    public void tax(double income){
-        double tax = Math.max(0, income - TAXABLE_INCOME) * TAX_RATE;
-        super.setBalance(super.round(super.getBalance() - tax));
     }
 
 }

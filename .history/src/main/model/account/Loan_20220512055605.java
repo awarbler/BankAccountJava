@@ -1,17 +1,16 @@
 package main.model.account;
-
 // child of Account 
+
 // or inherits from Account class
 // or extends the Account class 
 
-public class Saving extends Account {
-
-    // declare a private static final  an overdraft fee AS A CONSTANT
-    private static final double WITHDRAW_FEE = 5.50;
- 
+public class Loan extends Account {
+    // constant for interest rate of 0.02 
+    private static final double INTEREST_RATE = 0.02;
     // extends need to sync w/ parent constructor
     // parameters updated fields, checking object inherits
-    public Saving(String id, String name, double balance) {
+    public Loan(String id, String name, double balance) {
+        
         // use super constructor
         // calling constructor in the parent class
         // updates field in current object
@@ -21,7 +20,7 @@ public class Saving extends Account {
     // Create a copy constructor
     // Receive source object
     // use copy constructor from parent
-    public Saving(Account source) {
+    public Loan(Account source) {
         // use super constructor
         // calling constructor in the parent class
         // updates field in current object
@@ -35,10 +34,10 @@ public class Saving extends Account {
          * 
          * Inside :
          * 1. child class required to provide an override with logic
-         * 2. provide logic for deposit and withdraw
+         * 2. provide logic for deposit
          * 
          */
-        super.setBalance(super.round(super.getBalance() + amount));
+        // TODO
     }
 
     @Override
@@ -51,7 +50,7 @@ public class Saving extends Account {
          * 2. provide logic for withdraw
          * 
          */
-        super.setBalance(super.round(super.getBalance() - amount - WITHDRAW_FEE));
-        return true;
+        super.setBalance(super.round(super.getBalance() + amount + (amount * INTEREST_RATE)));
+        return false;
     }
 }

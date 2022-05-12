@@ -73,9 +73,7 @@ public class AccountTest {
     }
     @Test
     public void incomeTax() {
-        double income = 4000;
-
-        accounts[0].deposit(income);
+        accounts[0].deposit(4000);
         // typecast
         ((Taxable)accounts[0]).tax(income);
         assertEquals(5374.51 , accounts[0].getBalance());

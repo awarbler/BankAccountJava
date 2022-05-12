@@ -8,7 +8,6 @@ import main.model.account.Account;
 import main.model.account.Checking;
 import main.model.account.Loan;
 import main.model.account.Saving;
-import main.model.account.impl.Taxable;
 
 public class AccountTest {
     Account[] accounts;
@@ -70,14 +69,5 @@ public class AccountTest {
     public void loanDeposit() {
         accounts[2].deposit(1000);
         assertEquals(1537.31 , accounts[2].getBalance());
-    }
-    @Test
-    public void incomeTax() {
-        double income = 4000;
-
-        accounts[0].deposit(income);
-        // typecast
-        ((Taxable)accounts[0]).tax(income);
-        assertEquals(5374.51 , accounts[0].getBalance());
     }
 }

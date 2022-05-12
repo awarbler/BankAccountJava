@@ -5,13 +5,12 @@ package main.model.account;
 // or extends the Account class
 // ADD IMPLEMENTS TO FUNCTION NAME must override all method 
 
-public class Checking extends Account implements Taxable {
+public class Checking extends Account implements Taxable{
     // declare a private static final  an overdraft fee AS A CONSTANT
     private static final double OVERDRAFT_FEE = 5.50;
     // DECLARE A PRIVATE STATIC CONSTANT FOR OVERDRAFT LIMIT
     private static final double OVERDRAFT_LIMIT = 200.00;
-    // constant for taxable income and tax rate
-
+    // constant for taxable income 
     private static final double TAXABLE_INCOME = 3000;
     private static final double TAX_RATE = 0.15;
 
@@ -69,11 +68,6 @@ public class Checking extends Account implements Taxable {
 
         }
         
-    }
-    @Override
-    public void tax(double income){
-        double tax = Math.max(0, income - TAXABLE_INCOME) * TAX_RATE;
-        super.setBalance(super.round(super.getBalance() - tax));
     }
 
 }
