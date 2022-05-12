@@ -7,17 +7,16 @@ import java.util.Objects;
 public class Transaction implements Comparable<Transaction> {
     public enum Type{WITHDRAW, DEPOSIT};
     private Type type;
-
     public long timestamp;
     private String id;
     private double amount;
 
 
-    public Transaction(Type type, long timestamp, String id, double amount) throws IllegalAccessException{
-        // quality control id and amount
-        if(id == null || id.isBlank() || amount < 0){
-            throw new IllegalAccessException("INVALID PARAMS");
-        }
+    public Transaction(Type type, long timestamp, String id, double amount){
+        // // quality control id and amount cant figure it out
+        // if(id == null || id.isBlank() || amount < 0){
+        //     throw new IllegalAccessException("INVALID PARAMS");
+        // }
         this.type = type;
         this.timestamp = timestamp;
         this.id = id;
@@ -50,10 +49,10 @@ public class Transaction implements Comparable<Transaction> {
         return this.id;
     }
 
-    public void setId(String id) throws IllegalAccessException{
-        if(id == null || id.isBlank() || amount < 0){
-            throw new IllegalAccessException("INVALID ID");
-        }
+    public void setId(String id) {
+        // if(id == null || id.isBlank() || amount < 0){
+        //     throw new IllegalAccessException("INVALID ID");
+        // } cant figure out 
         this.id = id;
     }
 
