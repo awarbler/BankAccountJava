@@ -1,6 +1,5 @@
 package main.model.account.impl;
 
-public class Taxable {
+public interface Taxable{
     public void tax(double income);
-    
 }

@@ -29,49 +29,49 @@ public class AccountTest {
         };
     }
 
-    @TransactionTest
+    @Test
     public void withdrawal() {
         accounts[0].withdraw(1440);
         assertEquals(1524.51, accounts[0].getBalance());
  }
 
-    @TransactionTest
+    @Test
     public void overDraft() {
         accounts[0].withdraw(1534.43);
         assertEquals(1524.51
         , accounts[0].getBalance());
     }
-    @TransactionTest
+    @Test
     public void overDraftLimit() {
         accounts[0].withdraw(1726);
         assertEquals(1524.51, accounts[0].getBalance());
     }
-    @TransactionTest
+    @Test
     public void withdrawFee() {
         accounts[1].withdraw(100);
         assertEquals(2136.10, accounts[1].getBalance());
     }
-    @TransactionTest
+    @Test
     public void withdrawInterest() {
         accounts[2].withdraw(2434.31);
         assertEquals(5020.31 , accounts[2].getBalance());
     }
-    @TransactionTest
+    @Test
     public void withdrawLimit() {
         accounts[2].withdraw(7463.69);
         assertEquals(2537.31 , accounts[2].getBalance());
     }
-    @TransactionTest
+    @Test
     public void deposit() {
         accounts[0].deposit(5000);
         assertEquals(6524.51 , accounts[0].getBalance());
     }
-    @TransactionTest
+    @Test
     public void loanDeposit() {
         accounts[2].deposit(1000);
         assertEquals(1537.31 , accounts[2].getBalance());
     }
-    @TransactionTest
+    @Test
     public void incomeTax() {
         double income = 4000;
 

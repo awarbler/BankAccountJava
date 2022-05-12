@@ -1,6 +1,8 @@
 package main.model.account;
 // child of Account 
 
+import main.model.account.impl.Taxable;
+
 // or inherits from Account class
 // or extends the Account class
 // ADD IMPLEMENTS TO FUNCTION NAME must override all method 
