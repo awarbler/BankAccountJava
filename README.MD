@@ -44,4 +44,6 @@ I am expanding on a previous bank account program I wrote. The program is to acc
 # Future Work
 
 <!--{{Make a list of things that you need to fix, improve, and add in the future.}-->
-* Item 1 - Get a program that uses all of the requirements.
+* Work on Quality control
+* As user for withdraws and entries
+

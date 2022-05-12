@@ -3,6 +3,9 @@ package main;
 import main.model.account.Account;
 import main.model.account.Checking;
 import main.model.account.Saving;
+
+import java.util.ArrayList;
+
 import main.model.Bank;
 import main.model.Transaction;;
 // import files to main to use 
@@ -41,9 +44,6 @@ public class Main {
     }
     // get every transaction that matches 
     Transaction[] filteredTransactions = bank.getTransactions("000707030903804300083000770090045009");
- 
-
 }
-
 
 }
